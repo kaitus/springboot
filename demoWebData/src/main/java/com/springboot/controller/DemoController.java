@@ -26,5 +26,11 @@ public class DemoController {
 		model.addAttribute("name", name);
         return "greeting";
     }
+	
+	@GetMapping("/findAll")
+    public String greeting(Model model) {
+		model.addAttribute("personas", repo.findAll());
+        return "greeting";
+    }
 
 }
