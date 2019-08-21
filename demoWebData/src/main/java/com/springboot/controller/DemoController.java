@@ -19,7 +19,7 @@ public class DemoController {
     public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
         
 		Persona p = new Persona();
-        p.setIdPersona(1);
+        p.setIdPersona(5);
         p.setNombre("Carlos");
 		repo.save(p);
 		
@@ -27,7 +27,7 @@ public class DemoController {
         return "greeting";
     }
 	
-	@GetMapping("/findAll")
+	@GetMapping("/listar")
     public String greeting(Model model) {
 		model.addAttribute("personas", repo.findAll());
         return "greeting";
